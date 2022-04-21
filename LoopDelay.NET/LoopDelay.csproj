@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <Title>LoopDelay.NET</Title>
+    <LangVersion>9.0</LangVersion>
+    <Product>LoopDelay.NET</Product>    
+    <AssemblyName>LoopDelay.NET</AssemblyName>
+    <RootNamespace>LoopDelay.NET</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>S Christison</Authors>
+    <Copyright>S Christison ©2022</Copyright>
+    <FileVersion>1.0.3</FileVersion>
+	  <PackageVersion>1.0.3</PackageVersion>
+	  <AssemblyVersion>1.0.3</AssemblyVersion>    
+  </PropertyGroup>
+    
+  <PropertyGroup>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/HypsyNZ/LoopDelay.NET</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/HypsyNZ/LoopDelay.NET</PackageProjectUrl>
+    <Description>Allows you to add a Delay and Expire time to Loop Conditions</Description>
+    <PackageTags>loop, delay, extension, extended, conditions, expire, action, task</PackageTags>
+    <PackageReleaseNotes>https://github.com/HypsyNZ/LoopDelay.NET/tree/main/LoopDelay.NET</PackageReleaseNotes>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <DebugType>embedded</DebugType>
+    <Deterministic>True</Deterministic>
+    <IsPublishable>False</IsPublishable>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>        
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>X:\LoopDelay.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+	
+</Project>
