@@ -13,9 +13,9 @@
   <PropertyGroup>
     <Authors>S Christison</Authors>
     <Copyright>S Christison ©2022</Copyright>
-    <FileVersion>1.0.3</FileVersion>
-	  <PackageVersion>1.0.3</PackageVersion>
-	  <AssemblyVersion>1.0.3</AssemblyVersion>    
+    <FileVersion>1.0.4</FileVersion>
+	  <PackageVersion>1.0.4</PackageVersion>
+	  <AssemblyVersion>1.0.4</AssemblyVersion>    
   </PropertyGroup>
     
   <PropertyGroup>

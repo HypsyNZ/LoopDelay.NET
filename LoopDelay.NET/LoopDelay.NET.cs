@@ -11,6 +11,7 @@
 //******************************************************************************************************
 
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace LoopDelay.NET
@@ -66,20 +67,20 @@ namespace LoopDelay.NET
         public static async Task<bool> Delay(long startTicks, int delayMs, int expireMs)
         {
             // Wait Delay
+            long t = DateTime.UtcNow.Ticks - startTicks;
             await Task.Delay(delayMs);
-            long t = startTicks - DateTime.UtcNow.Ticks;
 
             // Expire (avoids any infinite loop)
             if (t > (expireMs * 10000))
             {
 #if DEBUG
-                Debug.WriteLine("Expired: " + t);
+                Console.WriteLine("Expired: " + t);
 #endif
                 // Return and Stop
                 return false;
             }
 #if DEBUG
-            Debug.WriteLine("Continue: " + t);
+            Console.WriteLine("Continue: " + t);
 #endif
             // Return and Continue
             return true;
@@ -100,13 +101,13 @@ namespace LoopDelay.NET
         {
             // Wait Delay
             await Task.Delay(delayTimeSpan);
-            TimeSpan t = startTime - DateTime.UtcNow;
+            TimeSpan t = DateTime.UtcNow - startTime;
 
             // Expire
             if (t > expireTimeSpan)
             {
 #if DEBUG
-                Debug.WriteLine("Expired: " + t);
+                Console.WriteLine("Expired: " + t);
 #endif
                 // Run Action as Task
                 _ = Task.Run(() => OnExpireAction());
@@ -115,7 +116,7 @@ namespace LoopDelay.NET
                 return false;
             }
 #if DEBUG
-            Debug.WriteLine("Continue: " + t);
+            Console.WriteLine("Continue: " + t);
 #endif
             // Return and Continue
             return true;
@@ -137,7 +138,7 @@ namespace LoopDelay.NET
         {
             // Wait Delay
             await Task.Delay(delayMs);
-            long t = startTicks - DateTime.UtcNow.Ticks;
+            long t = DateTime.UtcNow.Ticks - startTicks;
 
             // Expire (avoids any infinite loop)
             if (t > (expireMs * 10000))
@@ -145,13 +146,13 @@ namespace LoopDelay.NET
                 // Run Action as Task
                 _ = Task.Run(() => OnExpireAction());
 #if DEBUG
-                Debug.WriteLine("Expired: " + t);
+                Console.WriteLine("Expired: " + t);
 #endif
                 // Return and Stop
                 return false;
             }
 #if DEBUG
-            Debug.WriteLine("Continue: " + t);
+            Console.WriteLine("Continue: " + t);
 #endif
             // Return and Continue
             return true;

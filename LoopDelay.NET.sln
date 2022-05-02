@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoopDelay", "LoopDelay.NET\LoopDelay.csproj", "{581C4485-149C-4729-B8B5-5E1CD3461201}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoopTest", "LoopTest\LoopTest.csproj", "{F84516E2-6F69-4FD9-AB39-E81D6CDDE0E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{581C4485-149C-4729-B8B5-5E1CD3461201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{581C4485-149C-4729-B8B5-5E1CD3461201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{581C4485-149C-4729-B8B5-5E1CD3461201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84516E2-6F69-4FD9-AB39-E81D6CDDE0E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84516E2-6F69-4FD9-AB39-E81D6CDDE0E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84516E2-6F69-4FD9-AB39-E81D6CDDE0E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84516E2-6F69-4FD9-AB39-E81D6CDDE0E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
