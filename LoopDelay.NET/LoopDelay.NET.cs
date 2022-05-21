@@ -35,7 +35,7 @@ namespace LoopDelay.NET
         public static async Task<bool> Delay(DateTime startTime, TimeSpan delayTimeSpan, TimeSpan expireTimeSpan)
         {
             // Wait Delay
-            await Task.Delay(delayTimeSpan);
+            await Task.Delay(delayTimeSpan).ConfigureAwait(false);
             TimeSpan t = startTime - DateTime.UtcNow;
 
             // Expire (avoids any infinite loop)
@@ -68,7 +68,7 @@ namespace LoopDelay.NET
         {
             // Wait Delay
             long t = DateTime.UtcNow.Ticks - startTicks;
-            await Task.Delay(delayMs);
+            await Task.Delay(delayMs).ConfigureAwait(false);
 
             // Expire (avoids any infinite loop)
             if (t > (expireMs * 10000))
@@ -100,7 +100,7 @@ namespace LoopDelay.NET
         public static async Task<bool> Delay(DateTime startTime, TimeSpan delayTimeSpan, TimeSpan expireTimeSpan, Action OnExpireAction)
         {
             // Wait Delay
-            await Task.Delay(delayTimeSpan);
+            await Task.Delay(delayTimeSpan).ConfigureAwait(false);
             TimeSpan t = DateTime.UtcNow - startTime;
 
             // Expire
@@ -110,7 +110,7 @@ namespace LoopDelay.NET
                 Console.WriteLine("Expired: " + t);
 #endif
                 // Run Action as Task
-                _ = Task.Run(() => OnExpireAction());
+                _ = Task.Run(() => OnExpireAction()).ConfigureAwait(false);
 
                 // Return and Stop
                 return false;
@@ -137,14 +137,14 @@ namespace LoopDelay.NET
         public static async Task<bool> Delay(long startTicks, int delayMs, int expireMs, Action OnExpireAction)
         {
             // Wait Delay
-            await Task.Delay(delayMs);
+            await Task.Delay(delayMs).ConfigureAwait(false);
             long t = DateTime.UtcNow.Ticks - startTicks;
 
             // Expire (avoids any infinite loop)
             if (t > (expireMs * 10000))
             {
                 // Run Action as Task
-                _ = Task.Run(() => OnExpireAction());
+                _ = Task.Run(() => OnExpireAction()).ConfigureAwait(false); 
 #if DEBUG
                 Console.WriteLine("Expired: " + t);
 #endif
